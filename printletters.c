@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   printletters.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mathispeyre <mathispeyre@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 09:40:46 by mathispeyre       #+#    #+#             */
-/*   Updated: 2024/11/15 11:10:28 by mathispeyre      ###   ########.fr       */
+/*   Created: 2024/11/15 11:08:57 by mathispeyre       #+#    #+#             */
+/*   Updated: 2024/11/15 11:09:57 by mathispeyre      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#include "printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
+int	print_char(char c)
+{
+	write(1, &c, 1);
+	return (1);
+}
 
-int	ft_printf(const char *str, ...);
-int	printhub(char type, va_list parameters);
+int	print_string(char *str)
+{
+	int	i;
 
-int	print_char(char c);
-int	print_string(char *str);
-int	print_percent(char c);
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return (i);
+}
 
-#endif
+int	print_percent(char c)
+{
+	write(1, &c, 1);
+	return (1);
+}
