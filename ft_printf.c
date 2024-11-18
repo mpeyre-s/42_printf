@@ -6,16 +6,16 @@
 /*   By: mathispeyre <mathispeyre@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 09:37:58 by mathispeyre       #+#    #+#             */
-/*   Updated: 2024/11/15 10:33:42 by mathispeyre      ###   ########.fr       */
+/*   Updated: 2024/11/18 11:20:46 by mathispeyre      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	printhub(char type, va_list parameters)
 {
 	if (type == 'c')
-		return (print_char(va_arg(parameters, char)));
+		return (print_char(va_arg(parameters, int)));
 	else if (type == 's')
 		return (print_string(va_arg(parameters, char *)));
 	else if (type == 'p')
@@ -24,12 +24,11 @@ int	printhub(char type, va_list parameters)
 		return (print_base10(va_arg(parameters, int)));
 	else if (type == 'u')
 		return (print_unsigned10(va_arg(parameters, unsigned int)));
-	else if (type == 'x')
-		return (print_hexlower(va_arg(parameters, int)));
-	else if (type == 'X')
-		return (print_hexupper(va_arg(parameters, int)));
+	else if (type == 'x' || type == 'X')
+		return (hexhub(va_arg(parameters, unsigned int), type));
 	else if (type == '%')
 		return (print_percent('%'));
+	return (0);
 }
 
 int	ft_printf(const char *str, ...)
@@ -47,8 +46,10 @@ int	ft_printf(const char *str, ...)
 		{
 			result += printhub(str[i + 1], parameters);
 			i += 2;
+			continue ;
 		}
-		write(1, &str[i], 1);
+		ft_putchar_fd(str[i], 1);
+		result++;
 		i++;
 	}
 	va_end(parameters);

@@ -6,11 +6,11 @@
 /*   By: mathispeyre <mathispeyre@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:31:23 by mathispeyre       #+#    #+#             */
-/*   Updated: 2024/11/15 11:56:30 by mathispeyre      ###   ########.fr       */
+/*   Updated: 2024/11/15 15:50:12 by mathispeyre      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static size_t	ft_intlen(int n)
 {
@@ -32,7 +32,7 @@ static void	ft_putunsignednbr_fd(unsigned int n, int fd)
 	char	c;
 
 	if (n > 9)
-		ft_putnbr_fd(n / 10, fd);
+		ft_putunsignednbr_fd(n / 10, fd);
 	c = (n % 10) + '0';
 	ft_putchar_fd(c, fd);
 }
@@ -43,7 +43,7 @@ int	print_base10(int nb)
 	return (ft_intlen(nb));
 }
 
-int print_unsigned10(int nb)
+int	print_unsigned10(int nb)
 {
 	ft_putunsignednbr_fd(nb, 1);
 	return (ft_intlen(nb));
