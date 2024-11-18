@@ -6,7 +6,7 @@
 /*   By: mathispeyre <mathispeyre@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:31:23 by mathispeyre       #+#    #+#             */
-/*   Updated: 2024/11/15 15:50:12 by mathispeyre      ###   ########.fr       */
+/*   Updated: 2024/11/18 12:20:55 by mathispeyre      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	print_base10(int nb)
 	return (ft_intlen(nb));
 }
 
-int	print_unsigned10(int nb)
+int	print_unsigned10(unsigned int nb)
 {
 	ft_putunsignednbr_fd(nb, 1);
 	return (ft_intlen(nb));

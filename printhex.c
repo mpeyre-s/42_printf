@@ -6,7 +6,7 @@
 /*   By: mathispeyre <mathispeyre@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:58:52 by mathispeyre       #+#    #+#             */
-/*   Updated: 2024/11/18 09:42:08 by mathispeyre      ###   ########.fr       */
+/*   Updated: 2024/11/18 12:18:37 by mathispeyre      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	hexlen(int nb)
 
 	result = 0;
 	if (nb == -2147483648)
-		return (9);
+		return (8);
 	if (nb < 0)
 	{
 		result++;

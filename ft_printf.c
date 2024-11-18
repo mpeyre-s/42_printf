@@ -6,7 +6,7 @@
 /*   By: mathispeyre <mathispeyre@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 09:37:58 by mathispeyre       #+#    #+#             */
-/*   Updated: 2024/11/18 11:20:46 by mathispeyre      ###   ########.fr       */
+/*   Updated: 2024/11/18 13:44:32 by mathispeyre      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,13 @@ int	ft_printf(const char *str, ...)
 		{
 			result += printhub(str[i + 1], parameters);
 			i += 2;
-			continue ;
 		}
-		ft_putchar_fd(str[i], 1);
-		result++;
-		i++;
+		else
+		{
+			ft_putchar_fd(str[i], 1);
+			result++;
+			i++;
+		}
 	}
 	va_end(parameters);
 	return (result);

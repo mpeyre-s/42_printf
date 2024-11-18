@@ -6,7 +6,7 @@
 /*   By: mathispeyre <mathispeyre@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 09:40:46 by mathispeyre       #+#    #+#             */
-/*   Updated: 2024/11/18 09:43:56 by mathispeyre      ###   ########.fr       */
+/*   Updated: 2024/11/18 13:44:58 by mathispeyre      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		print_string(char *str);
 int		print_percent(char c);
 
 int		print_base10(int nb);
-int		print_unsigned10(int nb);
+int		print_unsigned10(unsigned int nb);
 
 int		print_hex(void *ptr);
 
