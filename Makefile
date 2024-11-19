@@ -1,5 +1,5 @@
 NAME = libftprintf.a
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror -I$(LIBFT_PATH)
 AR = ar
 ARFLAGS = rcs

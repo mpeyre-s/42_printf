@@ -6,16 +6,15 @@
 /*   By: mathispeyre <mathispeyre@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:08:57 by mathispeyre       #+#    #+#             */
-/*   Updated: 2024/11/18 13:44:39 by mathispeyre      ###   ########.fr       */
+/*   Updated: 2024/11/18 15:11:47 by mathispeyre      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_char(char c)
+int	print_char(int c)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	return (write(1, &c, 1));
 }
 
 int	print_string(char *str)
@@ -23,9 +22,11 @@ int	print_string(char *str)
 	int	i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i])
 	{
-		ft_putchar_fd(str[i], 1);
+		print_char(str[i]);
 		i++;
 	}
 	return (i);
@@ -33,6 +34,6 @@ int	print_string(char *str)
 
 int	print_percent(char c)
 {
-	ft_putchar_fd(c, 1);
+	print_char(c);
 	return (1);
 }
