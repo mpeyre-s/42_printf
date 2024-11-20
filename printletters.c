@@ -6,7 +6,7 @@
 /*   By: mathispeyre <mathispeyre@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:08:57 by mathispeyre       #+#    #+#             */
-/*   Updated: 2024/11/19 16:20:13 by mathispeyre      ###   ########.fr       */
+/*   Updated: 2024/11/19 16:27:21 by mathispeyre      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int	print_string(char *str)
 
 	i = 0;
 	if (!str)
-		return (0);
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	while (str[i])
 	{
 		print_char(str[i]);
