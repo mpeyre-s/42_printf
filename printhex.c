@@ -6,7 +6,7 @@
 /*   By: mathispeyre <mathispeyre@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:58:52 by mathispeyre       #+#    #+#             */
-/*   Updated: 2024/11/20 11:54:23 by mathispeyre      ###   ########.fr       */
+/*   Updated: 2024/11/20 11:58:15 by mathispeyre      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ static int	hexlen(unsigned int nb)
 	int	result;
 
 	result = 0;
-	if (nb == -2147483648)
-		return (8);
 	if (nb < 0)
 	{
 		result++;
@@ -38,11 +36,6 @@ void	print_hexlower(unsigned int nb)
 	char	*hex_base;
 
 	hex_base = "0123456789abcdef";
-	if (nb == -2147483648)
-	{
-		ft_putstr_fd("-80000000", 1);
-		return ;
-	}
 	if (nb < 0)
 	{
 		nb = -nb;
@@ -60,11 +53,6 @@ void	print_hexupper(unsigned int nb)
 	char	*hex_base;
 
 	hex_base = "0123456789ABCDEF";
-	if (nb == -2147483648)
-	{
-		ft_putstr_fd("-80000000", 1);
-		return ;
-	}
 	if (nb < 0)
 	{
 		nb = -nb;

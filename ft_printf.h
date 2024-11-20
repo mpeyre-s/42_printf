@@ -6,7 +6,7 @@
 /*   By: mathispeyre <mathispeyre@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 09:40:46 by mathispeyre       #+#    #+#             */
-/*   Updated: 2024/11/19 16:21:37 by mathispeyre      ###   ########.fr       */
+/*   Updated: 2024/11/20 11:57:40 by mathispeyre      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int		print_unsigned10(unsigned int nb);
 
 int		print_hex(void *ptr);
 
-int		hexhub(int nb, char type);
-void	print_hexlower(int nb);
-void	print_hexlower(int nb);
+int		hexhub(unsigned int nb, char type);
+void	print_hexlower(unsigned int nb);
+void	print_hexlower(unsigned int nb);
 
 #endif
