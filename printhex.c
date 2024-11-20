@@ -6,7 +6,7 @@
 /*   By: mathispeyre <mathispeyre@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:58:52 by mathispeyre       #+#    #+#             */
-/*   Updated: 2024/11/20 12:38:22 by mathispeyre      ###   ########.fr       */
+/*   Updated: 2024/11/20 12:39:24 by mathispeyre      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static int	hexlen(unsigned int nb)
 
 void	print_hexlower(unsigned int nb)
 {
-	char	c;
 	char	*hex_base;
 	char	buffer[9];
 	int		i;
@@ -47,7 +46,6 @@ void	print_hexlower(unsigned int nb)
 
 void	print_hexupper(unsigned int nb)
 {
-	char	c;
 	char	*hex_base;
 	char	buffer[9];
 	int		i;
