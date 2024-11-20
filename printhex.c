@@ -6,7 +6,7 @@
 /*   By: mathispeyre <mathispeyre@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:58:52 by mathispeyre       #+#    #+#             */
-/*   Updated: 2024/11/20 12:50:16 by mathispeyre      ###   ########.fr       */
+/*   Updated: 2024/11/20 12:58:03 by mathispeyre      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@ static int	hexlen(unsigned int nb)
 	int	result;
 
 	result = 0;
-	while (nb > 15)
+	if (nb == 0)
+		return (1);
+	while (nb > 0)
 	{
-		result += hexlen(nb / 16);
+		nb /= 16;
 		result++;
 	}
-	return (result + 1);
+	return (result);
 }
 
 void	print_hexlower(unsigned int nb)
