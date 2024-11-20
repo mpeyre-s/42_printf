@@ -6,7 +6,7 @@
 /*   By: mathispeyre <mathispeyre@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 14:30:23 by mathispeyre       #+#    #+#             */
-/*   Updated: 2024/11/18 09:43:25 by mathispeyre      ###   ########.fr       */
+/*   Updated: 2024/11/20 11:47:19 by mathispeyre      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,16 @@ int	print_hex(void *ptr)
 
 	adress = (unsigned long)ptr;
 	result = unsignedlong_to_char(adress);
+	if (!ptr)
+	{
+		ft_putstr_fd("(nil)", 1);
+		return (5);
+	}
 	if (!result)
 		return (0);
+	ft_putstr_fd("0x", 1);
 	ft_putstr_fd(result, 1);
-	len = ft_strlen(result);
+	len = ft_strlen(result) + 2;
 	free(result);
 	return (len);
 }

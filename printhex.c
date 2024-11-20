@@ -6,13 +6,13 @@
 /*   By: mathispeyre <mathispeyre@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:58:52 by mathispeyre       #+#    #+#             */
-/*   Updated: 2024/11/18 15:55:49 by mathispeyre      ###   ########.fr       */
+/*   Updated: 2024/11/20 11:54:23 by mathispeyre      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	hexlen(int nb)
+static int	hexlen(unsigned int nb)
 {
 	int	result;
 
@@ -32,7 +32,7 @@ static int	hexlen(int nb)
 	return (result + 1);
 }
 
-void	print_hexlower(int nb)
+void	print_hexlower(unsigned int nb)
 {
 	char	c;
 	char	*hex_base;
@@ -54,7 +54,7 @@ void	print_hexlower(int nb)
 	ft_putchar_fd(c, 1);
 }
 
-void	print_hexupper(int nb)
+void	print_hexupper(unsigned int nb)
 {
 	char	c;
 	char	*hex_base;
@@ -76,7 +76,7 @@ void	print_hexupper(int nb)
 	ft_putchar_fd(c, 1);
 }
 
-int	hexhub(int nb, char type)
+int	hexhub(unsigned int nb, char type)
 {
 	if (type == 'x')
 	{

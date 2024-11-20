@@ -6,7 +6,7 @@
 /*   By: mathispeyre <mathispeyre@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:31:23 by mathispeyre       #+#    #+#             */
-/*   Updated: 2024/11/18 12:20:55 by mathispeyre      ###   ########.fr       */
+/*   Updated: 2024/11/20 11:52:25 by mathispeyre      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,21 @@ static size_t	ft_intlen(int n)
 	len = 0;
 	if (n <= 0)
 		len++;
+	while (n != 0)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
+}
+
+static size_t	ft_uintlen(unsigned int n)
+{
+	size_t	len;
+
+	len = 0;
+	if (n == 0)
+		return (1);
 	while (n != 0)
 	{
 		n /= 10;
@@ -46,5 +61,5 @@ int	print_base10(int nb)
 int	print_unsigned10(unsigned int nb)
 {
 	ft_putunsignednbr_fd(nb, 1);
-	return (ft_intlen(nb));
+	return (ft_uintlen(nb));
 }
